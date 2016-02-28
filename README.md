@@ -1,8 +1,8 @@
 # Slak-ListView
 A unidirectional virtual-dom list view.  Renders a list of items to hyperscript.
-List items are passed a event emitter to write events to.  Users can listen for events
-on the event emitter and take whatever action is needed (e.g. rerender the list,
-play a sound, start a program, etc...)
+
+List items are passed a event emitter.  Listeners can wait for events
+and take whatever action is needed (e.g. rerender the list, play a sound, start a program, etc...)
 
 # Import
 
