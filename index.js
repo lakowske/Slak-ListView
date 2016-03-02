@@ -15,7 +15,7 @@ var EventEmitter  = require('events');
  * @param emptyMessage optional message to display when the list is empty
  * @param add is true if elements can be added to something
  */
-function ListView(items, itemToTree, name, emptyMessage, add, remove) {
+function ListView(items, itemToTree, name, emptyMessage, add, remove, opts) {
     var message = emptyMessage || '';
     var add     = add || false;
     
@@ -25,6 +25,7 @@ function ListView(items, itemToTree, name, emptyMessage, add, remove) {
         emptyMessage : message,
         add : add,
         remove : remove,
+        opts : opts,
         
         itemToTree : itemToTree,
         events : new EventEmitter()
@@ -77,7 +78,8 @@ function render (state, emit) {
         var header = h('h3', state.name);
         components.push(header)
     }
-    
+
+
     var subtrees = h('li', state.emptyMessage);
 
     if (state.items.length > 0) {
@@ -86,7 +88,13 @@ function render (state, emit) {
         })
     }
 
-    return h('ul', components.concat(subtrees));
+    if (state.opts && state.opts.className) {
+        components.push(h('ul', {className: state.opts.className}, subtrees));
+    } else {
+        components.push(h('ul', subtrees));
+    }
+    
+    return h('div', components);
 }
 
 function add(state, item) {
