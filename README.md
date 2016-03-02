@@ -1,4 +1,4 @@
-# Slak-ListView
+# slak-listview
 A unidirectional virtual-dom list view.  Renders a list of items to hyperscript.
 
 List items are passed a event emitter.  Listeners can wait for events
@@ -9,7 +9,7 @@ and take whatever action is needed (e.g. rerender the list, play a sound, start 
 ``` js
 //Import the module.
 //
-var ListView      = require('Slak-ListView')(view.itemToTree);
+var ListView      = require('slak-listview');
 ```
 
 # Construct
