@@ -71,6 +71,13 @@ function renderItem(state, item, emit) {
  * @param emit function to write events to
  */
 function render (state, emit) {
+    var components = []
+    
+    if (state.name !== '') {
+        var header = h('h3', state.name);
+        components.push(header)
+    }
+    
     var subtrees = h('li', state.emptyMessage);
 
     if (state.items.length > 0) {
@@ -79,7 +86,7 @@ function render (state, emit) {
         })
     }
 
-    return h('ul', subtrees);
+    return h('ul', components.concat(subtrees));
 }
 
 function add(state, item) {
