@@ -1,6 +1,6 @@
 {
   "name": "slak-listview",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A unidirectional virtual-dom list view",
   "main": "index.js",
   "scripts": {
