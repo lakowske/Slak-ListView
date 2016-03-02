@@ -9,7 +9,7 @@ and take whatever action is needed (e.g. rerender the list, play a sound, start 
 ``` js
 //Import the module.
 //
-var ListView      = require('slak-listview')(view.itemToTree);
+var ListView      = require('slak-listview');
 ```
 
 # Construct
