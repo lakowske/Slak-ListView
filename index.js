@@ -39,7 +39,10 @@ function ListView(items, itemToTree, name, emptyMessage, add, remove, opts) {
  * @param item to render
  * @param emit function to write events to
  */
-function renderItem(state, item, emit) {
+function renderItem(state, item) {
+    var events = state.events;
+    var emit = events.emit.bind(events);
+    
     var elTree = state.itemToTree(item, emit, item.editMode);
     var components = [elTree]
 
@@ -71,7 +74,7 @@ function renderItem(state, item, emit) {
  * @param state of the ListView
  * @param emit function to write events to
  */
-function render (state, emit) {
+function render (state) {
     var components = []
     
     if (state.name !== '') {
@@ -84,7 +87,7 @@ function render (state, emit) {
 
     if (state.items.length > 0) {
         subtrees = state.items.map(function(item) {
-            return h('li', renderItem(state, item, emit));
+            return h('li', renderItem(state, item));
         })
     }
 
