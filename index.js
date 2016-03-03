@@ -37,7 +37,6 @@ function ListView(items, itemToTree, name, emptyMessage, add, remove, opts) {
  *
  * @param state of the ListView
  * @param item to render
- * @param emit function to write events to
  */
 function renderItem(state, item) {
     var events = state.events;
@@ -72,7 +71,6 @@ function renderItem(state, item) {
  * Render a ListView
  *
  * @param state of the ListView
- * @param emit function to write events to
  */
 function render (state) {
     var components = []

@@ -22,13 +22,11 @@ var ListView      = require('slak-listview');
 //Constructs an empty ListView with no name, no message and add/remove buttons
 var view          = require('./view');
 var elementsView = ListView.ListView([], view.itemToTree, '', '', true, true);
-
 ```
 
 # Render
 
 ``` js
-//Renders elementsView passing an event emitter that child items can write
-//events to.
-var tree = ListView.render(elementsView, emit);
+//Renders elementsView 
+var tree = ListView.render(elementsView);
 ```
